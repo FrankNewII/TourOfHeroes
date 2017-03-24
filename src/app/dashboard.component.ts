@@ -11,6 +11,10 @@ export class DashboardComponent implements OnInit{
 
     constructor(private heroService: HeroService) {}
     ngOnInit():void {
-        this.heroService.getHeroes().then(heroes => this.heroes = heroes.splice(1,5));
+        this.heroService.getHeroes().then(heroes => {
+            var heros = heroes.map((v) => v);
+
+            this.heroes = heros.splice(1, 5);
+        });
     }
 }
