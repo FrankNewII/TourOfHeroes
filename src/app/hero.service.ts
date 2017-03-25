@@ -14,26 +14,34 @@ export class HeroService {
     }
 
     getHeroes(): Promise<Hero[]> {
-        return this.http.get(this.heroesUrl)
+        return Promise.resolve(HEROES);
+        /*return this.http.get(this.heroesUrl)
             .toPromise()
-            .then(response => response.json().data as Hero[])
-            .catch(this.handleError);
+         .then(response => HEROES)
+         .catch(this.handleError);*/
     }
 
     getHero(id: number): Promise<Hero> {
         const url = `${this.heroesUrl}/${id}`;
-        return this.http.get(url)
-            .toPromise()
-            .then(response => response.json().data as Hero)
+        return Promise
+            .resolve(response => {
+                HEROES.filter(v => {
+                    if (v.id == id) return v;
+                });
+            })
             .catch(this.handleError);
     }
 
     update(hero: Hero): Promise<Hero> {
         const url = `${this.heroesUrl}/${hero.id}`;
-        return this.http
-            .put(url, JSON.stringify(hero), {headers: this.headers})
-            .toPromise()
-            .then(() => hero)
+        return Promise.resolve(response => {
+            HEROES.filter(v => {
+                if (v.id == hero.id) {
+                    v = hero;
+                    return v;
+                }
+            });
+        })
             .catch(this.handleError);
     }
 
