@@ -12,19 +12,23 @@ import {HttpModule} from "@angular/http";
 
 import {HeroSearchComponent} from "./hero-search.component";
 
+
+import {Ng2SmartTableModule} from 'ng2-smart-table';
+
 @NgModule({
     declarations: [
         AppComponent,
         DashboardComponent,
         HeroDetailComponent,
         HeroesComponent,
-        HeroSearchComponent
+        HeroSearchComponent,
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
-        AppRoutingModule
+        AppRoutingModule,
+        Ng2SmartTableModule
     ],
     providers: [
         HeroService
