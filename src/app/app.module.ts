@@ -14,6 +14,7 @@ import {HeroSearchComponent} from "./components/hero-search/hero-search.componen
 
 
 import {Ng2SmartTableModule} from 'ng2-smart-table';
+import {NotFoundComponent} from "./components/not-found/not-found.component";
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import {Ng2SmartTableModule} from 'ng2-smart-table';
         HeroDetailComponent,
         HeroesComponent,
         HeroSearchComponent,
+        NotFoundComponent
     ],
     imports: [
         BrowserModule,
