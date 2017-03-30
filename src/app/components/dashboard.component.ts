@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {Hero} from "./hero";
-import {HeroService} from "./hero.service";
+import {Hero} from "../hero";
+import {HeroService} from "../services/hero.service";
 
 import {Ng2SmartTableModule} from 'ng2-smart-table';
 
 @Component({
     selector: 'my-dashboard',
-    templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.css']
+    templateUrl: 'dashboard.component.html',
+    styleUrls: ['dashboard.component.css']
 })
 
 export class DashboardComponent implements OnInit{
