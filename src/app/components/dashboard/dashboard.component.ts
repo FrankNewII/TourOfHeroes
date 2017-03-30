@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Hero} from "../../hero";
+import {Hero} from "../../models/hero";
 import {HeroService} from "../../services/hero.service";
 
 import {Ng2SmartTableModule} from 'ng2-smart-table';
