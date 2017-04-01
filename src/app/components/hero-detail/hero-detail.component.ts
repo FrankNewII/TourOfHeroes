@@ -13,8 +13,6 @@ import 'rxjs/add/operator/switchMap';
     styleUrls: ['hero-detail.component.css']
 })
 
-
-
 export class HeroDetailComponent implements OnInit{
     hero: Hero;
 
