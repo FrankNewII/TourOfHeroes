@@ -33,6 +33,7 @@ import {NotFoundComponent} from "./components/not-found/not-found.component";
         Ng2SmartTableModule
     ],
     providers: [
+
         HeroService
     ],
     bootstrap: [AppComponent]
