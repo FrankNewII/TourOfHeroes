@@ -12,9 +12,10 @@ import {HttpModule} from "@angular/http";
 
 import {HeroSearchComponent} from "./components/hero-search/hero-search.component";
 
-
-import {Ng2SmartTableModule} from 'ng2-smart-table';
 import {NotFoundComponent} from "./components/not-found/not-found.component";
+import {DialogOverviewExampleDialog} from "./components/modal/modal.component";
+import {MdDialogModule} from '@angular/material';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
     declarations: [
@@ -23,6 +24,7 @@ import {NotFoundComponent} from "./components/not-found/not-found.component";
         HeroDetailComponent,
         HeroesComponent,
         HeroSearchComponent,
+        DialogOverviewExampleDialog,
         NotFoundComponent
     ],
     imports: [
@@ -30,7 +32,8 @@ import {NotFoundComponent} from "./components/not-found/not-found.component";
         FormsModule,
         HttpModule,
         AppRoutingModule,
-        Ng2SmartTableModule
+        MdDialogModule,
+        BrowserAnimationsModule
     ],
     providers: [
 
