@@ -23,10 +23,10 @@ export class HeroDetailComponent implements OnInit{
     ) {}
 
     ngOnInit():void {
-        this.route.params
+        this.heroService.handleError();
+        /*this.route.params
             .switchMap((params: Params) => this.heroService.getHero(+params['id']))
-            .subscribe(hero => this.hero = hero);
-
+         .subscribe(hero => this.hero = hero);*/
         this.heroService.promise('ss')
             .then((a) => {
                 console.log(a);

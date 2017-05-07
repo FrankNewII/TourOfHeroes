@@ -35,6 +35,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
         MdDialogModule,
         BrowserAnimationsModule
     ],
+    entryComponents: [DialogOverviewExampleDialog],
     providers: [
 
         HeroService

@@ -5,7 +5,7 @@ import {Headers, Http} from "@angular/http";
 import "rxjs/add/operator/toPromise";
 import {Router} from "@angular/router";
 import {DialogOverviewExampleDialog} from "../components/modal/modal.component";
-import {MdDialog} from "@angular/material";
+import {MdDialog} from "@angular/material/material";
 
 @Injectable()
 export class HeroService {
@@ -16,12 +16,11 @@ export class HeroService {
     constructor(private http: Http, private router: Router, private dialog: MdDialog) {
     }
 
-    getHeroes(): Promise<Hero[]> {
-        return Promise.resolve(HEROES);
-        /*return this.http.get(this.heroesUrl)
+    getHeroes(): any {
+        return this.http.get(this.heroesUrl)
             .toPromise()
          .then(response => HEROES)
-         .catch(this.handleError);*/
+            .catch(this.handleError.bind(this));
     }
 
     getHero(id: number): any {
@@ -48,7 +47,7 @@ export class HeroService {
             .catch(this.handleError);
     }
 
-    create(name: string): Promise<Hero> {
+    create(name: string): any {
         return this.http
             .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
             .toPromise()
@@ -56,7 +55,7 @@ export class HeroService {
             .catch(this.handleError);
     }
 
-    promise(name: string): Promise<Hero> {
+    promise(name: string): any {
         return new Promise((resolve, reject) => {
             // то же что reject(new Error("o_O"))
 
@@ -81,6 +80,6 @@ export class HeroService {
 
     handleError() {
         this.dialog.open(DialogOverviewExampleDialog);
-        this.router.navigate(['/']);
+        /*this.router.navigate(['/']);*/
     }
 }
